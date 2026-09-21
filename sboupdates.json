@@ -1,10 +1,10 @@
 [
     {
-        "UpdateStageName": "Copier le projet SBO",
+        "UpdateStageName": "Installer le projet SBO (sbo.zip)",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"mkdir -p sbo data && cp -a /var/tmp/sbo/. sbo/ && chmod +x sbo/scripts/*.sh\"",
+        "UpdateSourceArgs": "-c \"if [ -f sbo.zip ]; then mkdir -p sbo data && (unzip -qo sbo.zip -d sbo || python3 -m zipfile -e sbo.zip sbo) && chmod +x sbo/scripts/*.sh && echo Projet SBO installe; else echo \\\"sbo.zip absent : televersez-le a la racine de l instance (gestionnaire de fichiers) puis relancez la mise a jour\\\"; exit 1; fi\"",
         "SkipOnFailure": false
     }
 ]
