@@ -1,0 +1,12 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 27777,
+        "Offset": 0,
+        "Range": 1,
+        "Ref": "ApplicationPort1",
+        "Name": "Port du jeu (ENet)",
+        "Description": "Port UDP des joueurs",
+        "ChildPorts": null
+    }
+]

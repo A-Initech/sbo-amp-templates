@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Copier le projet SBO",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"mkdir -p sbo data && cp -a /var/tmp/sbo/. sbo/ && chmod +x sbo/scripts/*.sh\"",
+        "SkipOnFailure": false
+    }
+]
