@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"if [ -f sbo.zip ]; then mkdir -p sbo data && (unzip -qo sbo.zip -d sbo || python3 -m zipfile -e sbo.zip sbo) && chmod +x sbo/scripts/*.sh && echo Projet SBO installe; else echo \\\"sbo.zip absent : televersez-le a la racine de l instance (gestionnaire de fichiers) puis relancez la mise a jour\\\"; exit 1; fi\"",
+        "UpdateSourceArgs": "-c \"mkdir -p sbo data; Z=\\\"\\\"; for f in sbo.zip sbo/sbo.zip; do [ -f \\\"$f\\\" ] && Z=\\\"$f\\\" && break; done; if [ -n \\\"$Z\\\" ]; then (unzip -qo \\\"$Z\\\" -d sbo || python3 -m zipfile -e \\\"$Z\\\" sbo) && chmod +x sbo/scripts/*.sh && echo Projet SBO installe depuis \\\"$Z\\\"; else echo \\\"sbo.zip introuvable (cherche : ./sbo.zip et ./sbo/sbo.zip) : televersez-le dans le gestionnaire de fichiers puis relancez la mise a jour\\\"; ls -la . sbo; exit 1; fi\"",
         "SkipOnFailure": false
     }
 ]
